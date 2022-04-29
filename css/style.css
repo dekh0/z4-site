@@ -11,16 +11,16 @@
     }
 
     .twoColumns {
-        padding: 10px 50px;
+        padding: 10px 80px 80px 80px;
     }
 
     .oneColumn {
-        padding: 0px 215px;
+        padding: 50px 215px;
     }
 
     .navbar {
         display: grid;
-        grid-template-columns: 1fr 500px;
+        grid-template-columns: 1fr 400px;
         
         padding: 18px 24px;
         font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -101,15 +101,23 @@
     }
 }
 
+
+
+
 /* for mobile devices */
 @media only screen and (max-width: 785px) {
+
+
+
+
+
     .wrapper {
         display: grid;
         grid-template-columns: 100%;
     }
 
     .twoColumns {
-        padding: 10px 50px;
+        padding: 10px 50px 50px 50px;
     }
 
     .navbarElements{
@@ -118,7 +126,7 @@
     }
 
     .oneColumn {
-        padding: 0px 50px;
+        padding: 20px 50px;
     }
 
     .navbar {
@@ -193,18 +201,28 @@
     }
     
     /* Show the dropdown menu on hover */
-    /* .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content {
         display: block;
-    } */
+    }
 }
 
 .navbarElements{
     padding-top: 3px;
 }
 
-
+.backgroundImage {
+   background-image: url(/img/1.jpg);
+   background-repeat: no-repeat;
+   background-attachment:local; 
+   background-size: 100% 100%;
+}
 
 body {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
     padding: 0px;
     margin: 0px;
 }
@@ -225,10 +243,10 @@ th {
 
 h1 {
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 4em;
-    height: 57.5938px;
+    font-size: 7em;
+    height: 58px;
     letter-spacing: -2.56px;
-    line-height: 57.6px;
+    line-height: 58px;
     margin-block-end: 0px;
     font-weight: 500;
     font-style: bold;
@@ -267,13 +285,13 @@ p {
 
 .footerText {
     box-sizing: border-box;
+    padding-top: 15px;
     color: white;
     display: block;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 17.6px;
+    font-size: 0.8em;
     font-weight: 300;
-    letter-spacing: 0.352px;
-    line-height: 26.4px;
+    line-height: 1.5em;
     margin: 0px;
 }
 
@@ -281,12 +299,12 @@ p {
     box-sizing: border-box;
     padding-left: 30px;
     color: white;
-    text-decoration: none;
+    text-decoration: underline;
     /* display: block; */
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 17.6px;
-    font-weight: 300;
-    letter-spacing: 0.352px;
+    font-size: 1.3em;
+    font-weight: 500;
+    letter-spacing: 0px;
     line-height: 26.4px;
     /* margin: 0px; */
 }
