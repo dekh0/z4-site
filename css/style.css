@@ -159,8 +159,10 @@
         align-items: flex-end;
         float: right;
         text-align: right;
-        padding-bottom: 0;
-        margin-bottom: 0;
+        
+        margin-top: auto;
+        
+        margin-bottom: 16px;
     }
 
 
@@ -204,6 +206,9 @@
         background-color: transparent;
     }
 
+    .stripes button {
+        background-color: black;
+    }
 
 
     /* Dropdown content (hidden by default) */
