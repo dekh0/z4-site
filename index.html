@@ -10,13 +10,46 @@
     <title>Zvukofor Sound Labs</title>
 </head>
 
-<body>
-    <div class="backgroundImage">
+<script>
+    function showNavElements() {
+        var x = document.getElementById("navbarElements");
+        if (x.style.display === "none") {
+            x.style.display = "grid";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function onLoad() {
+        onResize();
+    }
+
+    function onResize() {
+        var x = document.getElementById("navbarElements");
+        if (window.innerWidth <= 785) {
+            x.style.display = "none";
+        } else {
+            x.style.display = "grid";
+            console.log("fff");
+        }
+        x = document.getElementById("backgroundImage");
+        x.style.height = window.innerWidth.toString(10)+"px";
+
+        x = document.getElementById("bigTanhx");
+        var fontSize = window.innerWidth/10;
+        x.style.fontSize = fontSize.toString(10)+"px";
+        
+    }
+</script>
+
+<body onresize="onResize()" onload="onLoad()">
+    <div class="backgroundImage" id="backgroundImage">
         <div class="navbar">
             <div>
                 <a href="index.html"><img class="logo" src="img/logo.svg" height="40px" alt="Zvukofor Sound Labs"></a>
             </div>
-            <div class="navbarElements">
+            <button onclick="showNavElements()" class="stripes"><img src="/img/stripes.png"
+                    style="height:20px"></button>
+            <div class="navbarElements" id="navbarElements">
                 <div class="navbarElement">
                     <div class="dropdown">
                         <button class="dropbtn">Devices
@@ -38,7 +71,9 @@
                 </div>
             </div>
         </div>
-        <h1>Tanhx</h1>
+        <div class="bigTanhx" id="bigTanhx">
+            <h1>Tanhx</h1>
+        </div>
     </div>
 
     <div class="oneColumn">
