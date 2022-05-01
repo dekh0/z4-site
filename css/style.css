@@ -19,6 +19,8 @@
     }
 
     .navbar {
+        /* backdrop-filter: blur(40px); */
+        /* background-color: rgba(214, 254, 208, 0.1); */
         display: grid;
         grid-template-columns: 1fr 400px;
 
@@ -60,7 +62,7 @@
         padding: 0px 8px;
         outline: none;
         border: none;
-        background-color: rgb(214, 254, 208);
+        /* background-color: rgb(214, 254, 208); */
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
@@ -101,7 +103,7 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
-    
+
     .navbarElements {
         padding-top: 6px;
     }
@@ -121,14 +123,27 @@
         padding: 10px 50px 50px 50px;
     }
 
+    .navbarElementsBk{
+        backdrop-filter: blur(30px);
+        width:170px;
+        margin-left: auto;
+        margin-right: 0;
+        padding: 0px;
+    }
+
     .navbarElements {
-        
+        /* backdrop-filter: blur(4px); */
+        z-index: 20;
         display: grid;
         grid-area: d;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: 0;
     }
 
     .navbarElement {
-        /* background-color: white; */
+        padding: 0px;
+        z-index: 20;
         margin-left: auto;
         margin-right: 0;
         margin-right: 0px;
@@ -139,6 +154,9 @@
     }
 
     .navbar {
+        margin-left: auto;
+        margin-right: 0;
+        z-index: 20;
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-areas:
@@ -159,9 +177,7 @@
         align-items: flex-end;
         float: right;
         text-align: right;
-        
         margin-top: auto;
-        
         margin-bottom: 16px;
     }
 
@@ -180,6 +196,8 @@
         float: left;
     }
 
+  
+
     .dropdown .dropbtn {
         padding: 0px 8px;
         outline: none;
@@ -193,12 +211,12 @@
         color: inherit;
     }
 
-    .navbar a:hover,
-    .dropdown:hover .dropbtn {
+     .navbar a:hover
+     {
         color: rgb(139, 198, 60);
         -webkit-transition: -webkit-transform 0.1s ease-in-out;
         transition: all 0.1s ease-in-out;
-    }
+    } 
 
     .stripes {
         outline: none;
@@ -213,7 +231,7 @@
 
     /* Dropdown content (hidden by default) */
     .dropdown-content {
-        z-index: 1;
+        z-index: 10;
     }
 
     /* Links inside the dropdown */
@@ -230,17 +248,24 @@
     }
 }
 
+.dropbtn {
+    background-color: transparent;
+}
+
 .bigTanhx {
-    position:absolute;
-    /* z-index: 1;  */
+    position: absolute;
+    z-index: 1;
     top: 0;
     margin: 40% 0%;
     text-align: center;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     pointer-events: none;
 }
 
+header {
+    z-index: 20;
+}
 
 
 .backgroundImage {
@@ -276,7 +301,7 @@ th {
 }
 
 h1 {
-   
+    z-index: 1;
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     /* font-size: 7em; */
     height: 58px;

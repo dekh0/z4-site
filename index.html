@@ -32,12 +32,12 @@
             console.log("fff");
         }
         x = document.getElementById("backgroundImage");
-        x.style.height = window.innerWidth.toString(10)+"px";
+        x.style.height = window.innerWidth.toString(10) + "px";
 
         x = document.getElementById("bigTanhx");
-        var fontSize = window.innerWidth/10;
-        x.style.fontSize = fontSize.toString(10)+"px";
-        
+        var fontSize = window.innerWidth / 13;
+        x.style.fontSize = fontSize.toString(10) + "px";
+
     }
 </script>
 
@@ -50,24 +50,29 @@
             <button onclick="showNavElements()" class="stripes"><img src="/img/stripes.png"
                     style="height:20px"></button>
             <div class="navbarElements" id="navbarElements">
-                <div class="navbarElement">
-                    <div class="dropdown">
-                        <button class="dropbtn">Devices
-                            <!-- <i class="fa fa-caret-down"></i> -->
-                        </button>
-                        <img src="img/arrow.png" height="10">
-                        <div class="dropdown-content">
-                            <a href="#" style="background-color: rgb(214, 254, 208);">Tanhx Desktop</a>
-                            <a href="#">Tanhx 500</a>
-                            <a href="#">Mic Preamp</a>
+                <div class="navbarElementsBk">
+                    <div class="navbarElement">
+                        <div class="dropdown">
+                            <button class="dropbtn">Devices
+                                <!-- <i class="fa fa-caret-down"></i> -->
+                            </button>
+                            <img src="img/arrow.png" height="10">
+                            <div class="dropdown-content">
+                                <a href="#"
+                                    style="background-color: rgba(214, 254, 208, 0.7); backdrop-filter: blur(4px);">Tanhx
+                                    Desktop</a>
+                                <a href="#">Tanhx 500</a>
+                                <a href="#">Mic Preamp</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="navbarElement">
-                    <a href="#">Music Production</a>
-                </div>
-                <div class="navbarElement">
-                    <a href="#">About</a>
+                    
+                    <div class="navbarElement">
+                        <a href="#">Music Production</a>
+                    </div>
+                    <div class="navbarElement">
+                        <a href="#">About</a>
+                    </div>
                 </div>
             </div>
         </div>
