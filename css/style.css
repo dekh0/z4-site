@@ -269,7 +269,7 @@ header {
 
 
 .backgroundImage {
-    background-image: url("/img/1.jpg");
+    background-image: url(img/1.jpg);
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: 100%;
