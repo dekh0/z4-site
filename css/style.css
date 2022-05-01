@@ -269,7 +269,7 @@ header {
 
 
 .backgroundImage {
-    background-image: url(img/1.jpg);
+    background-image: url("/img/1.jpg");
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: 100%;
@@ -391,7 +391,18 @@ strong {
 
 
 
-
 footer {
     background-color: var(--z4-blue);
+}
+
+#waveform1, #waveform2  {
+    background-color: rgba(165, 247, 11, 0.068);
+    /* margin-bottom: 50px; */
+    padding: 20px;
+    margin: 10px 50px;
+}
+
+.transportBtn{
+    background-color: transparent;
+    border: none;
 }
