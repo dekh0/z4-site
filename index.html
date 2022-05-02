@@ -10,90 +10,9 @@
     <title>Zvukofor Sound Labs</title>
 </head>
 
-<script src="https://unpkg.com/wavesurfer.js"></script>
+<script src="/js/wavesurfer.js"></script>
+<script src="/js/script.js"></script>
 
-<script>
-
-    function showNavElements() {
-        var x = document.getElementById("navbarElements");
-        if (x.style.display === "none") {
-            x.style.display = "grid";
-        } else {
-            x.style.display = "none";
-        }
-    }
-
-    var wavesurfer1;
-    var wavesurfer2;
-
-    function onLoad() {
-        wavesurfer1 = WaveSurfer.create({
-            container: '#waveform1',
-            waveColor: 'rgb(101,95,160)',
-            progressColor: 'rgba(111,105,170)',
-            pixelRatio: 2,
-            responsive: true,
-            barWidth: 2,
-            barRadius: 0,
-        });
-        wavesurfer2 = WaveSurfer.create({
-            container: '#waveform2',
-            waveColor: 'rgb(101,95,160)',
-            progressColor: 'rgba(111,105,170)',
-            pixelRatio: 2,
-            responsive: true,
-            barWidth: 2,
-            barRadius: 0,
-        });
-
-        wavesurfer1.load("audio.wav");
-        wavesurfer2.load("audio2.wav");
-
-        onResize();
-    }
-
-    function play() {
-        wavesurfer1.play();
-        wavesurfer2.play();
-    }
-
-    var toggle = true;
-
-    function bypass() {
-        if (toggle) {
-            console.log("1");
-            wavesurfer1.setVolume(1);
-            wavesurfer2.setVolume(0);
-            document.getElementById("waveform1").style.display = "block";
-            document.getElementById("waveform2").style.display = "none";
-        }
-        else {
-            console.log("2");
-            wavesurfer1.setVolume(0);
-            wavesurfer2.setVolume(1);
-            document.getElementById("waveform1").style.display = "none";
-            document.getElementById("waveform2").style.display = "block";
-        }
-        toggle = !toggle;
-    }
-
-    function onResize() {
-        var x = document.getElementById("navbarElements");
-        if (window.innerWidth <= 785) {
-            x.style.display = "none";
-        } else {
-            x.style.display = "grid";
-            console.log("fff");
-        }
-        x = document.getElementById("backgroundImage");
-        x.style.height = window.innerWidth.toString(10) + "px";
-
-        x = document.getElementById("bigTanhx");
-        var fontSize = window.innerWidth / 13;
-        x.style.fontSize = fontSize.toString(10) + "px";
-
-    }
-</script>
 
 <body onresize="onResize()" onload="onLoad()">
     <div class="backgroundImage" id="backgroundImage">
@@ -202,16 +121,22 @@
             </p>
         </div>
     </div>
+    
 
-    <button onclick="play()" class="transportBtn">
-        <img src="img/play.png" height="20">
-    </button>
-    <button onclick="bypass()" class="transportBtn">
+    <button onclick="bypass()" class="transportBtn" style="grid-area: b;">
         <img src="img/1.jpg" height="20">
     </button>
-    <div id="waveform1"></div>
-    <div id="waveform2"></div>
 
+    <div class="audioPlayer" style="display: grid;">
+        <div style="grid-area: d;" class="audioPlrName"><p><b>Acoustic Drums Buss</b></p></div>
+        <button onclick="play()" class="transportBtn" style="grid-area: a;">
+            <img id="transportImg" src="img/play.png" height="40">
+        </button>
+        <div style="grid-area: c;">
+            <div id="waveform1"></div>
+            <div id="waveform2"></div>
+        </div>
+    </div>
     <footer>
         <table>
             <tr>

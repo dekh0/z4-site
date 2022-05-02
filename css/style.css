@@ -19,6 +19,7 @@
     }
 
     .navbar {
+        
         /* backdrop-filter: blur(40px); */
         /* background-color: rgba(214, 254, 208, 0.1); */
         display: grid;
@@ -81,6 +82,7 @@
 
     /* Dropdown content (hidden by default) */
     .dropdown-content {
+        backdrop-filter: blur(30px);
         display: none;
         position: absolute;
         z-index: 1;
@@ -261,6 +263,7 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
+    box-shadow: blue;
 }
 
 header {
@@ -396,13 +399,33 @@ footer {
 }
 
 #waveform1, #waveform2  {
-    background-color: rgba(165, 247, 11, 0.068);
+    /* background-color: rgba(165, 247, 11, 0.068); */
     /* margin-bottom: 50px; */
-    padding: 20px;
-    margin: 10px 50px;
+    /* padding: 20px; */
+margin-left: 10px;
+    /* margin: 10px 50px; */
+    border: 1px;
 }
 
 .transportBtn{
+    padding-top: 3px;
     background-color: transparent;
     border: none;
+}
+
+.audioPlayer{
+    margin: 50px;
+    padding: 0px 0px;
+    padding-right: 5%;
+    grid-template-columns: 10% 90%;
+    /* grid-template-rows: 20% 50%; */
+    grid-template-areas:
+            "d d"
+            "a c"
+            ;
+}
+
+.audioPlrName {
+    margin-left: 15px;
+    margin-bottom: 5px;
 }
