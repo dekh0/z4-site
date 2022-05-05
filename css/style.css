@@ -1,6 +1,8 @@
 /* Navbar container */
 :root {
     --z4-blue: rgb(102, 95, 165);
+    --BorderThickness: 2.3px;
+    --navBarFontWeight: 450;
 }
 
 /* for big browser window */
@@ -18,19 +20,19 @@
         padding: 50px 215px;
     }
 
-    .navbar {
-        
-        /* backdrop-filter: blur(40px); */
-        /* background-color: rgba(214, 254, 208, 0.1); */
-        display: grid;
-        grid-template-columns: 1fr 400px;
+    .logo{
+        margin-top: 0.5px;
+    }
 
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 490px;
         padding: 18px 24px;
         font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         font-size: 1.1em;
-        font-weight: 500;
+        font-weight: var(--navBarFontWeight);
         line-height: 1.5;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
         font-style: bold;
         color: var(--z4-blue);
     }
@@ -41,22 +43,37 @@
 
     .navbarElements {
         padding-top: 6px;
-        display: grid;
-        grid-auto-flow: column;
+        display: block;
+        width: 100%;
+        /* display: grid; */
+        /* grid-auto-flow: column; */
     }
 
     .navbar a {
-        padding: 4px 12px;
+        border: 2px;
+        border-radius: 18px;
+        border-style: solid;
+        border-color: transparent;
+        margin-left: 8px;
+        padding: 4px 8px;
         color: inherit;
         float: left;
-        text-align: center;
+        text-align: right;
         text-decoration: none;
     }
 
-
     .dropdown {
-        padding: 4px 12px;
+        border: var(--BorderThickness);
+        border-radius: 18px;
+        border-style: solid;
+        border-color: var(--z4-blue);
+        padding: 4px 0px;
         float: left;
+    }
+
+    .dropdown img {
+        padding-bottom: 1px;
+        padding-left: 2px;
     }
 
     .dropdown .dropbtn {
@@ -83,6 +100,7 @@
     /* Dropdown content (hidden by default) */
     .dropdown-content {
         backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
         display: none;
         position: absolute;
         z-index: 1;
@@ -127,7 +145,8 @@
 
     .navbarElementsBk{
         backdrop-filter: blur(30px);
-        width:170px;
+        -webkit-backdrop-filter: blur(30px);
+        width:205px;
         margin-left: auto;
         margin-right: 0;
         padding: 0px;
@@ -194,14 +213,14 @@
 
 
     .dropdown {
-        padding: 4px 3px;
+        /* padding: 4px 3px; */
         float: left;
     }
 
   
 
     .dropdown .dropbtn {
-        padding: 0px 8px;
+        /* padding: 0px 8px; */
         outline: none;
         border: none;
         font-family: inherit;
