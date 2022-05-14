@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.svg">
     <title>Zvukofor Sound Labs</title>
 </head>
 
@@ -21,14 +21,14 @@
                 <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px" alt="Zvukofor Sound Labs"></a>
             </div>
             <button onclick="showNavElements()" class="stripes">
-                <img src="img/stripes.png" height="20">
+                <img src="img/stripes.svg" height="20">
             </button>
             <div class="navbarElements" id="navbarElements">
                 <div class="navbarElementsBk">
                     <div class="navbarElement">
                         <div class="dropdown">
                             <div class="dropbtn">DEVICES
-                                <img src="img/arrow.png" height="10">
+                                <img src="img/arrow.svg" height="10">
                             </div>
                             <div class="dropdown-content">
                                 <a href="#">
@@ -125,20 +125,20 @@
     </div>
 
 
-    <button onclick="bypass()" class="transportBtn" style="grid-area: b;">
-        <img src="img/1.jpg" height="20">
-    </button>
-
     <div class="audioPlayer" style="display: grid;">
         <div style="grid-area: d;" class="audioPlrName"><p><b>Acoustic Drums Buss</b></p></div>
         <button onclick="play()" class="transportBtn" style="grid-area: a;">
-            <img id="transportImg" src="img/play.png" height="40">
+            <img id="transportImg" src="img/button_play.svg" height="60">
+        </button>
+        <button onclick="bypass()" class="transportBtn" style="grid-area: b;">
+            <img id="bypassImg" src="img/button_bypass_off.svg" height="60">
         </button>
         <div style="grid-area: c;">
             <div id="waveform1"></div>
             <div id="waveform2"></div>
         </div>
     </div>
+
     <footer>
         <table>
             <tr>

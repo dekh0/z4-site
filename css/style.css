@@ -127,6 +127,17 @@
     .navbarElements {
         padding-top: 6px;
     }
+
+    .audioPlayer{
+        /* margin: 50px; */
+        padding-left: 60px;
+        padding-right: 130px;
+        grid-template-columns: 70px 70px 90%;
+        grid-template-areas:
+                "d d d"
+                "a b c"
+                ;
+    }
 }
 
 
@@ -267,6 +278,19 @@
     .dropdown-content a:hover {
         color: rgb(139, 198, 60);
     }
+
+    .audioPlayer{
+        /* margin: 50px; */
+        padding-left: 40px;
+        padding-right: 140px;
+        padding-bottom: 50px;
+        grid-template-columns: 70px 70px 90%;
+        grid-template-areas:
+                "d d d"
+                "a b c"
+                ;
+    }
+
 }
 
 .dropbtn {
@@ -432,19 +456,9 @@ margin-left: 10px;
     border: none;
 }
 
-.audioPlayer{
-    margin: 50px;
-    padding: 0px 0px;
-    padding-right: 5%;
-    grid-template-columns: 10% 90%;
-    /* grid-template-rows: 20% 50%; */
-    grid-template-areas:
-            "d d"
-            "a c"
-            ;
-}
+
 
 .audioPlrName {
-    margin-left: 15px;
+    margin-left: 10px;
     margin-bottom: 5px;
 }

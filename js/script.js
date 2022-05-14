@@ -32,7 +32,8 @@ function onLoad() {
         responsive: true,
         height: 70,
         barWidth: 4,
-        // normalize: true,
+        cursorWidth: 4,
+        cursorColor: 'rgba(116,113,156,0.2)',
         barRadius: 9,
     });
 
@@ -64,11 +65,11 @@ function play() {
     if (!isPlaying) {
         wavesurfer1.play();
         wavesurfer2.play();
-        document.getElementById("transportImg").src = "/img/pause.png";
+        document.getElementById("transportImg").src = "/img/button_pause.svg";
     } else {
         wavesurfer1.pause();
         wavesurfer2.pause();
-        document.getElementById("transportImg").src = "/img/play.png";
+        document.getElementById("transportImg").src = "/img/button_play.svg";
     }
     isPlaying = !isPlaying;
 }
@@ -82,6 +83,7 @@ function bypass() {
         wavesurfer2.setVolume(0);
         document.getElementById("waveform1").style.display = "block";
         document.getElementById("waveform2").style.display = "none";
+        document.getElementById("bypassImg").src = "/img/button_bypass_off.svg";
     }
     else {
         console.log("2");
@@ -89,6 +91,7 @@ function bypass() {
         wavesurfer2.setVolume(1);
         document.getElementById("waveform1").style.display = "none";
         document.getElementById("waveform2").style.display = "block";
+        document.getElementById("bypassImg").src = "/img/button_bypass_on.svg";
     }
     toggle = !toggle;
 }
