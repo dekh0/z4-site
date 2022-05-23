@@ -4,10 +4,9 @@ const ids = [
     'drums-3'
 ];
 
-let wavesurfers = []
+let wavesurfers = [];
+let togglers = new Array(ids.length).fill(true);
 
-// let wavesurfer1;
-// let wavesurfer2;
 
 function onLoad() {
     ids.forEach((n, i) => {
@@ -20,13 +19,13 @@ function onLoad() {
                 <p><b>${data.dataset.name}</b></p>
                 </div>
                 <button onclick="play(${waveserferNumber})" class="transportBtn" style="grid-area: a;">
-                    <img id="transportImg" src="./img/button_play.svg" height="60">
+                    <img id="transportImg${i}" src="./img/button_play.svg" height="60">
                 </button>
                 <button onclick="bypass(${waveserferNumber})" class="transportBtn" style="grid-area: b;">
                     <img id="bypassImg${i}" src="./img/button_bypass_off.svg" height="60">
                 </button>
-                <div id="waveform_w${i}" style="grid-area: c;"></div>
-                <div id="waveform_d${i}" style="grid-area: c;"></div>
+                    <div id="waveform_w${i}" style="grid-area: c; margin-left: 10px"></div>
+                    <div id="waveform_d${i}" style="grid-area: c; margin-left: 10px"></div>
             `
         );
         let containerName = "#waveform_w" + String(i);
@@ -63,6 +62,10 @@ function onLoad() {
             play(waveserferNumber);
         });
 
+        // wavesurfers[waveserferNumber + 1].setDisabledEventEmissions(['interaction']);
+        wavesurfers[waveserferNumber + 1].toggleInteraction();
+        wavesurfers[waveserferNumber + 1].setVolume(0);
+
         document.getElementById("waveform_w" + String(i)).style.opacity = "0.0";
         document.getElementById("waveform_d" + String(i)).style.opacity = "0.0";
 
@@ -82,19 +85,19 @@ function play(number) {
     if (!wavesurfers[number].isPlaying()) {
         wavesurfers[number].play();
         wavesurfers[number + 1].play();
-        document.getElementById("transportImg").src = "/img/button_pause.svg";
+        document.getElementById("transportImg" + String(number / 2)).src = "/img/button_pause.svg";
     } else {
         wavesurfers[number].pause();
         wavesurfers[number + 1].pause();
-        document.getElementById("transportImg").src = "/img/button_play.svg";
+        document.getElementById("transportImg" + String(number / 2)).src = "/img/button_play.svg";
     }
     // isPlaying = !isPlaying;
 }
 
-let toggle = true;
+//let toggle = true;
 
 function bypass(number) {
-    if (!toggle) {
+    if (!togglers[number/2]) {
         wavesurfers[number].setVolume(1);
         wavesurfers[number + 1].setVolume(0);
         document.getElementById("waveform_w" + String(number / 2)).style.opacity = "1.0";
@@ -103,11 +106,12 @@ function bypass(number) {
     }
     else {
         wavesurfers[number].setVolume(0);
+        wavesurfers[number + 1].setVolume(1);
         document.getElementById("waveform_w" + String(number / 2)).style.opacity = "0.0";
         document.getElementById("waveform_d" + String(number / 2)).style.opacity = "1.0";
         document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_on.svg";
     }
-    toggle = !toggle;
+    togglers[number/2] = !togglers[number/2];
 }
 
 function onResize() {
