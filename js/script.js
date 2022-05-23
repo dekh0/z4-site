@@ -97,7 +97,7 @@ function play(number) {
 //let toggle = true;
 
 function bypass(number) {
-    if (!togglers[number/2]) {
+    if (!togglers[number / 2]) {
         wavesurfers[number].setVolume(1);
         wavesurfers[number + 1].setVolume(0);
         document.getElementById("waveform_w" + String(number / 2)).style.opacity = "1.0";
@@ -111,7 +111,7 @@ function bypass(number) {
         document.getElementById("waveform_d" + String(number / 2)).style.opacity = "1.0";
         document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_on.svg";
     }
-    togglers[number/2] = !togglers[number/2];
+    togglers[number / 2] = !togglers[number / 2];
 }
 
 function onResize() {
