@@ -18,7 +18,8 @@
     <div class="backgroundImage" id="backgroundImage">
         <div class="navbar">
             <div>
-                <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px" alt="Zvukofor Sound Labs"></a>
+                <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px"
+                        alt="Zvukofor Sound Labs"></a>
             </div>
             <button onclick="showNavElements()" class="stripes">
                 <img src="img/stripes.svg" height="20">
@@ -124,20 +125,9 @@
         </div>
     </div>
 
-
-    <div class="audioPlayer" style="display: grid;">
-        <div style="grid-area: d;" class="audioPlrName"><p><b>Acoustic Drums Buss</b></p></div>
-        <button onclick="play()" class="transportBtn" style="grid-area: a;">
-            <img id="transportImg" src="img/button_play.svg" height="60">
-        </button>
-        <button onclick="bypass()" class="transportBtn" style="grid-area: b;">
-            <img id="bypassImg" src="img/button_bypass_off.svg" height="60">
-        </button>
-        <div style="grid-area: c;">
-            <div id="waveform1"></div>
-            <div id="waveform2"></div>
-        </div>
-    </div>
+    <div data-name="Drums" data-dry="audio/drums1.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-1" class="audioPlayer"></div>
+    <div data-name="Bass guitar" data-dry="audio/bass.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-2" class="audioPlayer"></div>
+    <div data-name="Synth" data-dry="audio/pad.wav" data-wet="audio/bass.wav" data-type="looper" id="drums-3" class="audioPlayer"></div>
 
     <footer>
         <table>

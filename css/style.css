@@ -129,14 +129,8 @@
     }
 
     .audioPlayer{
-        /* margin: 50px; */
-        padding-left: 60px;
-        padding-right: 130px;
-        grid-template-columns: 70px 70px 90%;
-        grid-template-areas:
-                "d d d"
-                "a b c"
-                ;
+        padding-left: 65px;
+        padding-right: 125px;
     }
 }
 
@@ -283,14 +277,19 @@
         /* margin: 50px; */
         padding-left: 40px;
         padding-right: 140px;
-        padding-bottom: 50px;
-        grid-template-columns: 70px 70px 90%;
-        grid-template-areas:
-                "d d d"
-                "a b c"
-                ;
     }
 
+}
+
+.audioPlayer{
+    display: grid;
+    padding-bottom: 50px;
+    grid-template-columns: 70px 70px 90%;
+    /* grid-template-rows: 10px 60px; */
+    grid-template-areas:
+            "d d d"
+            "a b c"
+            ;
 }
 
 .dropbtn {
@@ -315,7 +314,7 @@ header {
 
 
 .backgroundImage {
-    background-image: url("/img/1.jpg");
+    background-image: url("../img/1.jpg");
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: 100%;

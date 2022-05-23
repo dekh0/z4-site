@@ -1,103 +1,117 @@
+const ids = [
+    'drums-1',
+    'drums-2',
+    'drums-3'
+];
 
-function showNavElements() {
-    var x = document.getElementById("navbarElements");
-    if (x.style.display === "none") {
-        x.style.display = "grid";
-    } else {
-        x.style.display = "none";
-    }
-}
+let wavesurfers = []
 
-var wavesurfer1;
-var wavesurfer2;
+// let wavesurfer1;
+// let wavesurfer2;
 
 function onLoad() {
-    wavesurfer1 = WaveSurfer.create({
-        container: '#waveform1',
-        waveColor: 'rgb(116,113,156)',
-        progressColor: 'rgb(81,75,140)',
-        pixelRatio: 4,
-        responsive: true,
-        height: 70,
-        barWidth: 4,
-        cursorWidth: 4,
-        cursorColor: 'rgba(116,113,156,0.2)',
-        barRadius: 9,
-    });
-    wavesurfer2 = WaveSurfer.create({
-        container: '#waveform2',
-        waveColor: 'rgb(101,95,160)',
-        progressColor: 'rgba(111,105,170)',
-        pixelRatio: 4,
-        responsive: true,
-        height: 70,
-        barWidth: 4,
-        cursorWidth: 4,
-        cursorColor: 'rgba(116,113,156,0.2)',
-        barRadius: 9,
-    });
+    ids.forEach((n, i) => {
+        const data = document.querySelector("#" + n);
+        const element = document.getElementById(n);
+        const waveserferNumber = i * 2;
+        element.insertAdjacentHTML('afterbegin',
+            ` 
+                <div style="grid-area: d;" class="audioPlrName">
+                <p><b>${data.dataset.name}</b></p>
+                </div>
+                <button onclick="play(${waveserferNumber})" class="transportBtn" style="grid-area: a;">
+                    <img id="transportImg" src="./img/button_play.svg" height="60">
+                </button>
+                <button onclick="bypass(${waveserferNumber})" class="transportBtn" style="grid-area: b;">
+                    <img id="bypassImg${i}" src="./img/button_bypass_off.svg" height="60">
+                </button>
+                <div id="waveform_w${i}" style="grid-area: c;"></div>
+                <div id="waveform_d${i}" style="grid-area: c;"></div>
+            `
+        );
+        let containerName = "#waveform_w" + String(i);
+        wavesurfers.push(new WaveSurfer.create({
+            container: containerName,
+            waveColor: 'rgb(116,113,156)',
+            progressColor: 'rgb(81,75,140)',
+            pixelRatio: 4,
+            responsive: true,
+            height: 70,
+            barWidth: 4,
+            cursorWidth: 4,
+            cursorColor: 'rgba(116,113,156,0.2)',
+            barRadius: 9,
+        }));
+        containerName = "#waveform_d" + String(i);
 
-    wavesurfer1.load("audio/audio.wav");
-    wavesurfer2.load("audio/audio2.wav");
+        wavesurfers.push(new WaveSurfer.create({
+            container: containerName,
+            waveColor: 'rgb(101,95,160)',
+            progressColor: 'rgba(111,105,170)',
+            pixelRatio: 4,
+            responsive: true,
+            height: 70,
+            barWidth: 4,
+            cursorWidth: 4,
+            cursorColor: 'rgba(116,113,156,0.2)',
+            barRadius: 9,
+        }));
+        wavesurfers[waveserferNumber].load(data.dataset.dry);
+        wavesurfers[waveserferNumber + 1].load(data.dataset.wet);
 
-    wavesurfer1.on('finish', function () {
-        play();
-    });
+        wavesurfers[waveserferNumber].on('finish', function () {
+            play(waveserferNumber);
+        });
+
+        document.getElementById("waveform_w" + String(i)).style.opacity = "0.0";
+        document.getElementById("waveform_d" + String(i)).style.opacity = "0.0";
+
+        setTimeout(tm, 500);
+        function tm() {
+            document.getElementById("waveform_w" + String(i)).style.opacity = "1";
+            document.getElementById("waveform_d" + String(i)).style.opacity = "0";
+        }
+    })
 
     onResize();
-
-    document.getElementById("waveform1").style.opacity = "0.0";
-    document.getElementById("waveform2").style.opacity = "0.0";
-
-    setTimeout(tm, 300);
-    function tm() {
-        document.getElementById("waveform1").style.display = "block";
-        document.getElementById("waveform2").style.display = "none";
-        document.getElementById("waveform1").style.opacity = "1";
-        document.getElementById("waveform2").style.opacity = "1";
-    }
 }
 
 
-var isPlaying = false;
 
-function play() {
-    if (!isPlaying) {
-        wavesurfer1.play();
-        wavesurfer2.play();
+function play(number) {
+    if (!wavesurfers[number].isPlaying()) {
+        wavesurfers[number].play();
+        wavesurfers[number + 1].play();
         document.getElementById("transportImg").src = "/img/button_pause.svg";
     } else {
-        wavesurfer1.pause();
-        wavesurfer2.pause();
+        wavesurfers[number].pause();
+        wavesurfers[number + 1].pause();
         document.getElementById("transportImg").src = "/img/button_play.svg";
     }
-    isPlaying = !isPlaying;
+    // isPlaying = !isPlaying;
 }
 
-var toggle = true;
+let toggle = true;
 
-function bypass() {
+function bypass(number) {
     if (!toggle) {
-        console.log("1");
-        wavesurfer1.setVolume(1);
-        wavesurfer2.setVolume(0);
-        document.getElementById("waveform1").style.display = "block";
-        document.getElementById("waveform2").style.display = "none";
-        document.getElementById("bypassImg").src = "/img/button_bypass_off.svg";
+        wavesurfers[number].setVolume(1);
+        wavesurfers[number + 1].setVolume(0);
+        document.getElementById("waveform_w" + String(number / 2)).style.opacity = "1.0";
+        document.getElementById("waveform_d" + String(number / 2)).style.opacity = "0.0";
+        document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_off.svg";
     }
     else {
-        console.log("2");
-        wavesurfer1.setVolume(0);
-        wavesurfer2.setVolume(1);
-        document.getElementById("waveform1").style.display = "none";
-        document.getElementById("waveform2").style.display = "block";
-        document.getElementById("bypassImg").src = "/img/button_bypass_on.svg";
+        wavesurfers[number].setVolume(0);
+        document.getElementById("waveform_w" + String(number / 2)).style.opacity = "0.0";
+        document.getElementById("waveform_d" + String(number / 2)).style.opacity = "1.0";
+        document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_on.svg";
     }
     toggle = !toggle;
 }
 
 function onResize() {
-    var x = document.getElementById("navbarElements");
+    let x = document.getElementById("navbarElements");
     if (window.innerWidth <= 785) {
         x.style.display = "none";
     } else {
@@ -107,7 +121,15 @@ function onResize() {
     x.style.height = window.innerWidth.toString(10) + "px";
 
     x = document.getElementById("bigTanhx");
-    var fontSize = window.innerWidth / 13;
+    let fontSize = window.innerWidth / 13;
     x.style.fontSize = fontSize.toString(10) + "px";
 }
 
+function showNavElements() {
+    let x = document.getElementById("navbarElements");
+    if (x.style.display === "none") {
+        x.style.display = "grid";
+    } else {
+        x.style.display = "none";
+    }
+}
