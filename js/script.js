@@ -9,6 +9,7 @@ let togglers = new Array(ids.length).fill(true);
 
 
 function onLoad() {
+
     ids.forEach((n, i) => {
         const data = document.querySelector("#" + n);
         const element = document.getElementById(n);
@@ -29,9 +30,12 @@ function onLoad() {
             `
         );
         let containerName = "#waveform_w" + String(i);
+        let z4_color = getComputedStyle(document.documentElement).getPropertyValue('--z4-blue');
+        console.log(z4_color);
+
         wavesurfers.push(new WaveSurfer.create({
             container: containerName,
-            waveColor: 'rgb(116,113,156)',
+            waveColor: z4_color,
             progressColor: 'rgb(81,75,140)',
             pixelRatio: 4,
             responsive: true,
@@ -45,7 +49,7 @@ function onLoad() {
 
         wavesurfers.push(new WaveSurfer.create({
             container: containerName,
-            waveColor: 'rgb(101,95,160)',
+            waveColor: z4_color,
             progressColor: 'rgba(111,105,170)',
             pixelRatio: 4,
             responsive: true,

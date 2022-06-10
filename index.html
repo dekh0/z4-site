@@ -6,20 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="./img/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
     <title>Zvukofor Sound Labs</title>
 </head>
 
-<script src="./js/wavesurfer.js"></script>
-<script src="./js/script.js"></script>
+<script src="/js/wavesurfer.js"></script>
+<script src="/js/script.js"></script>
 
 
 <body onresize="onResize()" onload="onLoad()">
-    <div class="backgroundImage" id="backgroundImage">
+    <div class="cover" id="cover">
         <div class="navbar">
             <div>
-                <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px"
-                        alt="Zvukofor Sound Labs"></a>
+                <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px" alt="Zvukofor Sound Labs"></a>
             </div>
             <button onclick="showNavElements()" class="stripes">
                 <img src="img/stripes.svg" height="20">
@@ -53,14 +52,17 @@
                 </div>
             </div>
         </div>
-        <div class="bigTanhx" id="bigTanhx">
+        
+        <div class="bigheader" id="bigheader">
             <h1>Tanhx</h1>
+            <h2>Desktop Stereo Saturator/Mojobox</h2>
         </div>
     </div>
+   
 
     <div class="oneColumn">
         <p>
-            <strong>Tanhx – award winning stereo saturator/soft clipper/fattening device.</strong>
+            Tanhx – award winning stereo saturator/soft clipper/fattening device.
             <br>
             <br>
             From subtle analogue peak limiting and nicely colored crest-factor reduction to creamy harmonics enhancing
@@ -82,12 +84,12 @@
             Powered by USB with any PSU/phone charger or laptop/desktop PC or even a powerbank(!) using basic USB-B
             cable (same you use for MIDI-keyboards).
         </p>
-        <br><br><br><br>
+ </div>
         <div>
             <img src="img/1.jpg" class="wideImage">
         </div>
 
-    </div>
+   
 
 
 
@@ -118,23 +120,68 @@
                 This is not a manual for newbies, nor this is a detailed instructions,
                 it is just a roadmap for those who skilled in soldering and can read schematics from the board.
                 Think of this instruction as of an example of what you can do, but you can do more!
-                <sup style="font-size: 8px;">
-                    TM
-                </sup>
             </p>
         </div>
     </div>
 
+
+
     <div data-name="Drums" data-dry="audio/drums1.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-1" class="audioPlayer"></div>
     <div data-name="Bass guitar" data-dry="audio/bass.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-2" class="audioPlayer"></div>
     <div data-name="Synth" data-dry="audio/pad.wav" data-wet="audio/bass.wav" data-type="looper" id="drums-3" class="audioPlayer"></div>
+
+    <div class="emp1"><div class="oneColumn" >
+        <p>
+            From subtle analogue peak limiting and nicely colored crest-factor reduction to creamy harmonics enhancing
+            and bluesy tubey overdrive. When using it on a channel 75% you don’t need any “surgical” EQing and peak
+            compression after this one. Just great on drums, synths, guitars (very tubey!), just everything!
+            <br>
+            <br>
+            Tanhx soft-clipping/harmonic generation is very dynamic, it reacts differently to fast and slow level
+            changes, to incoming sound spectral balance, so it sounds very alive and organic, completely not like a
+            basic diode clippers or overdrive pedals.
+        </p>
+ </div></div>
+
+ <div class="wrapper">
+    <div class="twoColumns">
+        <h3>Sound character</h3>
+        <p>
+            It is not a secret, that excellent audio interface excels a good ones mainly in analogue
+            circuits.
+            There are too much compromises made in mid-priced soundcards: cheap, bad sounding opamps, cheap
+            caps
+            of small values and low operating temperature limits, and so on.
+            Definitely, any AD-DA interface will benefit from good de- signed discrete-based preamp, for
+            example, but this is completely different topic. We'll limit our mission to changing bad
+            sounding
+            opamps to good or clean sound- ing ones — you should choose them depending on your own taste,
+            and
+            changing electrolytic caps for more ap- propriate ones.
+        </p>
+    </div>
+    <div class="twoColumns">
+        <h3>Main functions</h3>
+        <p>
+            We were asked for this instruction for pretty long time, and every time someone asked us we
+            wrote
+            complete explanations (but without pics) in private messages. Fi- nally, this manual will be
+            available for public access.
+            This is not a manual for newbies, nor this is a detailed instructions,
+            it is just a roadmap for those who skilled in soldering and can read schematics from the board.
+            Think of this instruction as of an example of what you can do, but you can do more!
+        </p>
+    </div>
+</div>
+ 
+
 
     <footer>
         <table>
             <tr>
                 <th>
                     <p class="footerText">
-                        <b>© 2005-2022, Zvukofor Sound Labs.</b></br>
+                        © 2005-2022, Zvukofor Sound Labs.</br></br>
                         Please make backlinks when reposting.</br>
                         Feel free to contact us for any questions.</br>
                         Thank you for watching us.</br>
@@ -143,7 +190,7 @@
                 </th>
                 <th style="text-align: right;">
                     <p class="footerText">
-                        <a href="#">Instagram</a><a href="#">Telegram</a><a href="#">Mail</a>
+                        <a href="https://www.instagram.com/zvukofor/">Instagram</a><a href="https://t.me/zvukoforsoundlabs">Telegram</a><a href="mailto:info@zvukofor.com">E-Mail</a>
                     </p>
                 </th>
             </tr>
