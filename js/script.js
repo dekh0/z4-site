@@ -112,16 +112,16 @@ function onLoad() {
 function play(number) {
     if (!wavesurfers[number].isPlaying()) {
         wavesurfers[number].play();
-        if (data.dataset.type === 'looper') {
+       
             wavesurfers[number + 1].play();
             document.getElementById("transportImg" + String(number / 2)).src = "/img/button_pause.svg";
-        }
+        
     } else {
         wavesurfers[number].pause();
-        if (data.dataset.type === 'looper') {
+       
             wavesurfers[number + 1].pause();
             document.getElementById("transportImg" + String(number / 2)).src = "/img/button_play.svg";
-        }
+        
     }
 }
 
