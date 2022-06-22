@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <title>Zvukofor Sound Labs</title>
+</head>
+
+<script src="/js/wavesurfer.js"></script>
+<script src="/js/script.js"></script>
+
+
+<body onresize="onResize()" onload="onLoad()">
+        <div class="navbar">
+            <div>
+                <a href="index.html"><img class="logo" src="img/zvukofor_logo_vio.svg" height="37px" alt="Zvukofor Sound Labs"></a>
+            </div>
+            <button onclick="showNavElements()" class="stripes">
+                <img src="img/stripes.svg" height="20">
+            </button>
+            <div class="navbarElements" id="navbarElements">
+                <div class="navbarElementsBk">
+                    <div class="navbarElement">
+                        <div class="dropdown">
+                            <div class="dropbtn">DEVICES
+                                <img src="img/arrow.svg" height="10">
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="#">
+                                    <b>TANHX DESKTOP</b>
+                                </a>
+                                <a href="#">TANHX 500</a>
+                                <a href="#">MIC PREAMP</a>
+                            </div>
+                        </div>
+                        <div class="navbarElement">
+                            <a href="#">MUSIC PRODUCTION</a>
+                        </div>
+                        <div class="navbarElement">
+                            <a href="#">ABOUT</a>
+                        </div>
+                        <div class="navbarElement">
+                            <a href="#">BLOG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+   
+    <div data-name="Drums" data-dry="audio/drums1.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-4"></div>
+    <div data-name="Drums" data-dry="audio/drums1.wav" data-wet="audio/pad.wav" data-type="player" id="drums-5"></div>
+    <div data-name="Drums" data-dry="audio/drums1.wav" data-wet="audio/pad.wav" data-type="looper" id="drums-6"></div>
+
+    <footer>
+        <table>
+            <tr>
+                <th>
+                    <p class="footerText">
+                        © 2005-2022, Zvukofor Sound Labs.</br></br>
+                        Please make backlinks when reposting.</br>
+                        Feel free to contact us for any questions.</br>
+                        Thank you for watching us.</br>
+                        &nbsp;
+                    </p>
+                </th>
+                <th style="text-align: right;">
+                    <p class="footerText">
+                        <a href="https://www.instagram.com/zvukofor/">Instagram</a><a href="https://t.me/zvukoforsoundlabs">Telegram</a><a href="mailto:info@zvukofor.com">E-Mail</a>
+                    </p>
+                </th>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>

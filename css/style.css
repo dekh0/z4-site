@@ -15,6 +15,7 @@ body {
 a {
     padding: 0px;
     margin: 0px;
+    text-decoration: none;
 }
 
 
@@ -72,8 +73,6 @@ th {
         padding-top: 4px;
         display: block;
         width: 100%;
-        /* display: grid; */
-        /* grid-auto-flow: column; */
     }
 
     .navbar a {
@@ -107,7 +106,6 @@ th {
         padding: 0px 10px;
         outline: none;
         border: none;
-        /* background-color: rgb(214, 254, 208); */
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
@@ -161,6 +159,10 @@ th {
     }
 
 
+    .audioLooper{
+        padding-left: 65px;
+        padding-right: 125px;
+    }
     .audioPlayer{
         padding-left: 65px;
         padding-right: 125px;
@@ -201,7 +203,6 @@ th {
     }
 
     .navbarElements {
-        /* backdrop-filter: blur(4px); */
         float: left;
         z-index: 20;
         display: grid;
@@ -260,14 +261,12 @@ th {
 
 
     .dropdown {
-        /* padding: 4px 3px; */
         float: left;
     }
 
   
 
     .dropdown .dropbtn {
-        /* padding: 0px 8px; */
         outline: none;
         border: none;
         font-family: inherit;
@@ -315,8 +314,11 @@ th {
         color: rgb(212, 47, 47);
     }
 
+    .audioLooper{
+        padding-left: 40px;
+        padding-right: 140px;
+    }
     .audioPlayer{
-        /* margin: 50px; */
         padding-left: 40px;
         padding-right: 140px;
     }
@@ -331,10 +333,15 @@ th {
         color: var(--z4-blue);
         margin: 0px;
         text-align: center;
-        /* padding-top: 285px; */
         padding-bottom: 0px;
     }
 
+}
+
+.dropdown-content{
+    padding-top: 10px;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .dropbtn {
@@ -364,7 +371,6 @@ header {
     background-attachment: local;
     background-position: center;
     background-position-y: center;
-    /* background-blend-mode: overlay;
     background-color: rgb(201, 200, 154); */
     margin: 0px 0 0px 0;
     overflow: hidden;
@@ -375,7 +381,6 @@ header {
 
 
 h1, h2{
-    /* color: rgb(0, 0, 0); */
     color: var(--z4-blue);
 }
 
@@ -408,7 +413,6 @@ h3 {
     font-weight: 500;
     font-style: bold;
     color: var(--z4-blue);
-    /* margin: 0px; */
     text-align: left;
 }
 
@@ -446,7 +450,7 @@ p {
     box-sizing: border-box;
     padding-left: 30px;
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
     font-size: 1.3em;
     font-weight: 400;
 }
@@ -470,23 +474,28 @@ footer {
     background-color: var(--z4-blue);
 }
 
-.audioPlayer{
+.audioLooper{
     display: grid;
     padding-bottom: 50px;
     grid-template-columns: 70px 70px 90%;
-    /* grid-template-rows: 10px 60px; */
     grid-template-areas:
             "d d d"
             "a b c"
             ;
 }
 
-#waveform1, #waveform2  {
-    /* background-color: rgba(165, 247, 11, 0.068); */
-    /* margin-bottom: 50px; */
-    /* padding: 20px; */
+.audioPlayer{
+    display: grid;
+    padding-bottom: 50px;
+    grid-template-columns: 70px 70px 90%;
+    grid-template-areas:
+            "d d d"
+            "a c c"
+            ;
+}
+
+#waveform1, #waveform2  {  
 margin-left: 10px;
-    /* margin: 10px 50px; */
     border: 1px;
 }
 
