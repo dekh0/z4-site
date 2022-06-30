@@ -5,6 +5,8 @@
     --navBarFontWeight: 400;
 }
 
+
+
 body {
     padding: 0px;
     margin: 0px;
@@ -32,7 +34,10 @@ th {
     padding: 0px 20px;
 }
 
-/* for big browser window */
+/* //////////////////////////////// */
+/* ///////for browser screen/////// */
+/* //////////////////////////////// */
+
 @media only screen and (min-width: 860px) {
     .wrapper {
         display: grid;
@@ -53,7 +58,6 @@ th {
     }
 
     .navbar {
-        margin-top: 4px;
         display: grid;
         grid-template-columns: 1fr 490px;
         padding: 20px 24px;
@@ -124,7 +128,6 @@ th {
 
     /* Dropdown content (hidden by default) */
     .dropdown-content {
-
 	margin: 6px 0 0 0;
 	padding: 6px 0 0 0;
         backdrop-filter: blur(30px);
@@ -136,7 +139,6 @@ th {
 
     /* Links inside the dropdown */
     .dropdown-content a {
-
 	margin: 2px 0 0 0;
         padding: 10px 8px;
         float: none;
@@ -160,22 +162,200 @@ th {
 
 
     .audioLooper{
-        padding-left: 65px;
-        padding-right: 125px;
+        /* padding-left: 65px; */
+        margin-left: 28px;
+        margin-right: 180px;
+        grid-template-columns: 70px 70px 100% ;
     }
+
     .audioPlayer{
         padding-left: 65px;
         padding-right: 125px;
+        grid-template-columns: 10%  90%;
     }
-
 
 }
 
+.audioPlayer{
+    display: grid;
+    padding-bottom: 50px;
+
+}
+
+/* //////////////////////////////// */
+/* ///////for tablet screen//////// */
+/* //////////////////////////////// */
+
+@media only screen and (max-width: 860px) and (min-width: 500px) {
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 100%;
+    }
+
+    .twoColumns {
+        padding: 10px 50px 50px 50px;
+    }
+
+    .logo{
+        margin: 0px 0px 0 -10px;
+        padding: 0px;
+        height: 28px;
+    }
+
+    .navbarElementsBk{
+        float: left;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        width:205px;
+        margin-left: auto;
+        margin-right: 0px;
+        padding: 0px;
+    }
+
+    .navbarElements {
+        float: left;
+        z-index: 20;
+        display: grid;
+        grid-area: c;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .navbarElement {
+        padding: 0px;
+        z-index: 20;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    .oneColumn {
+        padding: 20px 50px;
+    }
+
+    .navbar {
+        margin-left: auto;
+        margin-right: 0;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "a b"
+            "c d";
+        padding: 18px 24px;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: -0.02em;
+        font-style: bold;
+        color: var(--z4-blue);
+    }
+
+    .stripes {
+        grid-area: b;
+        align-items: flex-end;
+        float: right;
+        text-align: right;
+        margin-top: 4px;
+        margin-bottom: 16px;
+    }
 
 
-/* for mobile devices */
-@media only screen and (max-width: 860px) {
+    .navbar a {
+        padding: 4px 12px;
+        color: inherit;
+        float: left;
+        text-align: center;
+        text-decoration: none;
+    }
 
+
+    .dropdown {
+        float: left;
+    }
+
+  
+
+    .dropdown .dropbtn {
+        outline: none;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+        font-style: inherit;
+        color: inherit;
+    }
+
+     .navbar a:hover
+     {
+        ccolor: rgb(212, 47, 47);
+        -webkit-transition: -webkit-transform 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    } 
+
+    .stripes {
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+
+    .stripes button {
+        background-color: black;
+    }
+
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        z-index: 10;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        padding: 4px 8px;
+        margin-left: 16px;
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        color: rgb(212, 47, 47);
+    }
+
+    .audioLooper{
+        padding-left: 40px;
+        padding-right: 140px;
+        grid-template-columns: 14% 14% 85%;
+    }
+    .audioPlayer{
+        padding-left: 40px;
+        padding-right: 140px;
+        grid-template-columns: 10%  90%;
+    }
+
+    h1 {
+        z-index: 1;
+        font-size: 5em;
+        letter-spacing: -7px;
+        line-height: 58px;
+        margin-block-end: 0px;
+        font-weight: 500;
+        color: var(--z4-blue);
+        margin: 0px;
+        text-align: center;
+        padding-bottom: 0px;
+    }
+
+}
+
+/* //////////////////////////////// */
+/* ///////for phone screen///////// */
+/* //////////////////////////////// */
+
+@media only screen and (max-width: 500px) {
 
     .wrapper {
         display: grid;
@@ -348,11 +528,11 @@ th {
     background-color: transparent;
 }
 
-.bigheader {
+.bigHeader {
        
     position: relative;
     z-index: 0;
-    margin: 750px 0px 0px 0px;
+    margin: 650px 0px 0px 0px;
     padding: 0px 20px 0px 20px;
     text-align: center;
     width: 100%;
@@ -365,20 +545,17 @@ header {
 
 
 .cover {
-    background-image: url("/img/2cc.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-position: center;
-    background-position-y: center;
-    background-color: rgb(201, 200, 154); */
-    margin: 0px 0 0px 0;
-    overflow: hidden;
-    position: relative;
-    height: 1050px;
+    width: 100%;
+    position:absolute;
+    z-index: -2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
+/* .coverImg {
+        width: 100%;
+} */
 
 h1, h2{
     color: var(--z4-blue);
@@ -477,7 +654,7 @@ footer {
 .audioLooper{
     display: grid;
     padding-bottom: 50px;
-    grid-template-columns: 70px 70px 90%;
+    /* grid-template-columns: 14% 14% 85%; */
     grid-template-areas:
             "d d d"
             "a b c"
@@ -487,7 +664,7 @@ footer {
 .audioPlayer{
     display: grid;
     padding-bottom: 50px;
-    grid-template-columns: 70px 70px 90%;
+    /* grid-template-columns: 10%  90%; */
     grid-template-areas:
             "d d d"
             "a c c"

@@ -7,6 +7,7 @@ const ids = [
     'drums-6'
 ];
 
+
 let wavesurfers = [];
 let togglers = new Array(ids.length).fill(true);
 
@@ -151,12 +152,12 @@ function onResize() {
     } else {
         x.style.display = "grid";
     }
-    x = document.getElementById("backgroundImage");
-    x.style.height = window.innerWidth.toString(10) + "px";
 
-    x = document.getElementById("bigTanhx");
-    let fontSize = window.innerWidth / 13;
-    x.style.fontSize = fontSize.toString(10) + "px";
+
+    // x = document.getElementById("bigHeader");
+    // let marginValue = window.innerWidth - 800;
+    // x.style.margin = marginValue.toString(10) + "px 0px 0px 0px";
+    // debugger;
 }
 
 function showNavElements() {
