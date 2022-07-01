@@ -113,16 +113,16 @@ function onLoad() {
 function play(number) {
     if (!wavesurfers[number].isPlaying()) {
         wavesurfers[number].play();
-       
-            wavesurfers[number + 1].play();
-            document.getElementById("transportImg" + String(number / 2)).src = "/img/button_pause.svg";
-        
+
+        wavesurfers[number + 1].play();
+        document.getElementById("transportImg" + String(number / 2)).src = "/img/button_pause.svg";
+
     } else {
         wavesurfers[number].pause();
-       
-            wavesurfers[number + 1].pause();
-            document.getElementById("transportImg" + String(number / 2)).src = "/img/button_play.svg";
-        
+
+        wavesurfers[number + 1].pause();
+        document.getElementById("transportImg" + String(number / 2)).src = "/img/button_play.svg";
+
     }
 }
 
@@ -130,34 +130,45 @@ function play(number) {
 function bypass(number) {
     if (!togglers[number / 2]) {
         wavesurfers[number].setVolume(1);
-            wavesurfers[number + 1].setVolume(0);
-            document.getElementById("waveform_w" + String(number / 2)).style.opacity = "1.0";
-            document.getElementById("waveform_d" + String(number / 2)).style.opacity = "0.0";
-            document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_off.svg";
+        wavesurfers[number + 1].setVolume(0);
+        document.getElementById("waveform_w" + String(number / 2)).style.opacity = "1.0";
+        document.getElementById("waveform_d" + String(number / 2)).style.opacity = "0.0";
+        document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_off.svg";
     }
     else {
         wavesurfers[number].setVolume(0);
-            wavesurfers[number + 1].setVolume(1);
-            document.getElementById("waveform_w" + String(number / 2)).style.opacity = "0.0";
-            document.getElementById("waveform_d" + String(number / 2)).style.opacity = "1.0";
-            document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_on.svg";
+        wavesurfers[number + 1].setVolume(1);
+        document.getElementById("waveform_w" + String(number / 2)).style.opacity = "0.0";
+        document.getElementById("waveform_d" + String(number / 2)).style.opacity = "1.0";
+        document.getElementById("bypassImg" + String(number / 2)).src = "/img/button_bypass_on.svg";
     }
     togglers[number / 2] = !togglers[number / 2];
 }
 
 function onResize() {
     let x = document.getElementById("navbarElements");
-    if (window.innerWidth <= 785) {
+    if (window.innerWidth <= 860) {
         x.style.display = "none";
+    }
+    else if (window.innerWidth >= 1980) {
+        let coverImg = document.getElementById("coverImg");
+        coverImg.style.width = window.innerWidth.toString(10) + "px";
+        coverImg.style.height = "100%";
+        let coverImgStyle = window.getComputedStyle(coverImg);
+        let heightImg = coverImgStyle.getPropertyValue('height');
+        let bigHeader = document.getElementById("bigHeader");
+
+        let marginTop = (parseInt(heightImg, 10) / 1000 - 1) * 750 + 650;
+        bigHeader.style.margin = marginTop.toString(10) + "px 0px 0px 0px";
+
+        let bigheaderStyle = window.getComputedStyle(bigHeader);
+        let fontSize = 16 + ((window.innerWidth / 1980) - 1) * 18;
+        bigHeader.style.fontSize = fontSize.toString(10) + "px";
+        
     } else {
         x.style.display = "grid";
     }
 
-
-    // x = document.getElementById("bigHeader");
-    // let marginValue = window.innerWidth - 800;
-    // x.style.margin = marginValue.toString(10) + "px 0px 0px 0px";
-    // debugger;
 }
 
 function showNavElements() {
