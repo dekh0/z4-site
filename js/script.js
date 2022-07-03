@@ -4,7 +4,10 @@ const ids = [
     'drums-3',
     'drums-4',
     'drums-5',
-    'drums-6'
+    'drums-6',
+    'drums-7',
+    'drums-8',
+    'drums-9'
 ];
 
 
@@ -27,13 +30,13 @@ function onLoad() {
                 <p><b>${data.dataset.name}</b></p>
                 </div>
                 <button onclick="play(${waveserferNumber})" class="transportBtn" style="grid-area: a;">
-                    <img id="transportImg${i}" src="./img/button_play.svg" height="60">
+                <img id="transportImg${i}" src="./img/button_play.svg" class="playerButtonImg">
                 </button>
                 <button onclick="bypass(${waveserferNumber})" class="transportBtn" style="grid-area: b;">
-                    <img id="bypassImg${i}" src="./img/button_bypass_off.svg" height="60">
+                    <img id="bypassImg${i}" src="./img/button_bypass_off.svg" class="playerButtonImg">
                 </button>
-                    <div id="waveform_w${i}" style="grid-area: c; margin-left: 10px"></div>
-                    <div id="waveform_d${i}" style="grid-area: c; margin-left: 10px"></div>
+                    <div id="waveform_w${i}" style="grid-area: c; margin-left: 10px; margin-top: 2px"></div>
+                    <div id="waveform_d${i}" style="grid-area: c; margin-left: 10px; margin-top: 2px"></div>
             `
                 );
             } else if (data.dataset.type === 'player') {
@@ -44,9 +47,9 @@ function onLoad() {
                 <p><b>${data.dataset.name}</b></p>
                 </div>
                 <button onclick="play(${waveserferNumber})" class="transportBtn" style="grid-area: a;">
-                    <img id="transportImg${i}" src="./img/button_play.svg" height="60">
+                    <img id="transportImg${i}" src="./img/button_play.svg" class="playerButtonImg">
                 </button>
-                    <div id="waveform_w${i}" style="grid-area: c; margin-left: 10px; paddin-left: 0px"></div>
+                    <div id="waveform_w${i}" style="grid-area: c; margin-left: 10px; margin-top: 2px; "></div>
                 `
                 );
             }
@@ -114,13 +117,30 @@ function play(number) {
     if (!wavesurfers[number].isPlaying()) {
         wavesurfers[number].play();
 
-        wavesurfers[number + 1].play();
+        if (wavesurfers[number + 1] != null)
+            wavesurfers[number + 1].play();
+
+        for (let i = 0; i < ids.length; i++) {
+            if (document.getElementById("transportImg" + String(i)) != null) {
+                document.getElementById("transportImg" + String(i)).src = "/img/button_play.svg";
+            }
+        }
+
         document.getElementById("transportImg" + String(number / 2)).src = "/img/button_pause.svg";
+
+        wavesurfers.forEach((n, i) => {
+            if (n !== null)
+                if (i != number) {
+                    n.pause();
+                }
+        });
+
 
     } else {
         wavesurfers[number].pause();
 
-        wavesurfers[number + 1].pause();
+        if (wavesurfers[number + 1] != null)
+            wavesurfers[number + 1].pause();
         document.getElementById("transportImg" + String(number / 2)).src = "/img/button_play.svg";
 
     }
@@ -146,11 +166,24 @@ function bypass(number) {
 }
 
 function onResize() {
+
+    document.getElementById("testPenis").innerHTML = window.innerWidth.toString(10) + ' x ' + window.innerHeight.toString(10);
+
     let x = document.getElementById("navbarElements");
-    if (window.innerWidth <= 860) {
+
+    if (window.innerWidth <= 860 && window.innerWidth >= 500) { //tablet size
         x.style.display = "none";
+        wavesurfers.forEach((n, i) => {
+            if (n !== null)
+                n.setHeight(50);
+        });
+    } else if (window.innerWidth <= 500) { //phone size
+        wavesurfers.forEach((n, i) => {
+            if (n !== null)
+                n.setHeight(40);
+        });
     }
-    else if (window.innerWidth >= 1980) {
+    else if (window.innerWidth >= 1980) { //more than 2k browser window
         let coverImg = document.getElementById("coverImg");
         coverImg.style.width = window.innerWidth.toString(10) + "px";
         coverImg.style.height = "100%";
@@ -164,9 +197,12 @@ function onResize() {
         let bigheaderStyle = window.getComputedStyle(bigHeader);
         let fontSize = 16 + ((window.innerWidth / 1980) - 1) * 18;
         bigHeader.style.fontSize = fontSize.toString(10) + "px";
-        
     } else {
         x.style.display = "grid";
+        wavesurfers.forEach((n, i) => {
+            if (n !== null)
+                n.setHeight(70);
+        });
     }
 
 }

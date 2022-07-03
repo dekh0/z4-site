@@ -11,11 +11,9 @@ body {
 }
 
 body {
+    
     position: relative;
     width: 100%;
-    /* -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-         box-sizing: border-box; */
     padding: 0px;
     margin: 0px;
     color: rgb(84, 84, 84);
@@ -134,9 +132,9 @@ th {
 
     /* Dropdown content (hidden by default) */
     .dropdown-content {
-        margin: 6px 0 0 0;
+        margin: 8px 0 0 0;
         padding: 6px 0 0 0;
-        backdrop-filter: blur(30px);
+        backdrop-filter: blur(300px);
         -webkit-backdrop-filter: blur(30px);
         display: none;
         position: absolute;
@@ -166,18 +164,32 @@ th {
         padding-top: 7px;
     }
 
+    .audioPlrName {
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+    .playerButtonImg {
+        height: 67px;
+    }
 
     .audioLooper {
-        /* padding-left: 65px; */
-        margin-left: 28px;
-        margin-right: 180px;
-        grid-template-columns: 70px 70px 100%;
+        margin-left: 70px;
+        margin-right: 220px;
+        grid-template-columns: 77px 77px 100%;
     }
 
     .audioPlayer {
-        padding-left: 65px;
-        padding-right: 125px;
-        grid-template-columns: 10% 90%;
+        margin-left: 70px;
+        margin-right: 150px;
+        grid-template-columns: 77px 100%;
+    }
+
+    #waveform1,
+    #waveform2 {
+        padding-top: 10px;
+        margin-left: 10px;
+        /* border: 1px; */
     }
 
     .coverImg {
@@ -223,7 +235,7 @@ th {
         float: left;
         backdrop-filter: blur(30px);
         text-align: left;
-        display:grid;    
+        display: grid;
         -webkit-backdrop-filter: blur(30px);
         width: 205px;
         margin-left: auto;
@@ -322,7 +334,6 @@ th {
         background-color: black;
     }
 
-
     /* Dropdown content (hidden by default) */
     .dropdown-content {
         z-index: 10;
@@ -341,16 +352,27 @@ th {
         color: rgb(212, 47, 47);
     }
 
+
+    .audioPlrName {
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+    .playerButtonImg {
+        height: 45px;
+        opacity: 0.999;
+    }
+
     .audioLooper {
-        padding-left: 40px;
-        padding-right: 140px;
-        grid-template-columns: 14% 14% 85%;
+        margin-left: 40px;
+        margin-right: 180px;
+        grid-template-columns: 53px 50px 100%;
     }
 
     .audioPlayer {
-        padding-left: 40px;
-        padding-right: 140px;
-        grid-template-columns: 10% 90%;
+        margin-left: 40px;
+        margin-right: 120px;
+        grid-template-columns: 50px 100%;
     }
 
     .coverImg {
@@ -396,7 +418,7 @@ th {
         float: left;
         backdrop-filter: blur(30px);
         text-align: left;
-        display:grid;    
+        display: grid;
         -webkit-backdrop-filter: blur(30px);
         width: 205px;
         margin-left: auto;
@@ -454,7 +476,6 @@ th {
         margin-bottom: 16px;
     }
 
-
     .navbar a {
         padding: 4px 12px;
         color: inherit;
@@ -463,12 +484,9 @@ th {
         text-decoration: none;
     }
 
-
     .dropdown {
         float: left;
     }
-
-
 
     .dropdown .dropbtn {
         outline: none;
@@ -517,14 +535,26 @@ th {
         color: rgb(212, 47, 47);
     }
 
+    .audioPlrName {
+        font-size: 13px;
+        margin-left: 19px;
+        margin-bottom: 1px;
+    }
+
+    .playerButtonImg {
+        height: 33px;
+    }
+
     .audioLooper {
-        padding-left: 40px;
-        padding-right: 140px;
+        margin-left: 2px;
+        margin-right: 120px;
+        grid-template-columns: 48px 48px 100%;
     }
 
     .audioPlayer {
-        padding-left: 40px;
-        padding-right: 140px;
+        margin-left: 2px;
+        margin-right: 120px;
+        grid-template-columns: 48px 48px 100%;
     }
 
     .coverImg {
@@ -670,7 +700,6 @@ footer {
 .audioLooper {
     display: grid;
     padding-bottom: 50px;
-    /* grid-template-columns: 14% 14% 85%; */
     grid-template-areas:
         "d d d"
         "a b c"
@@ -680,28 +709,19 @@ footer {
 .audioPlayer {
     display: grid;
     padding-bottom: 50px;
-    /* grid-template-columns: 10%  90%; */
     grid-template-areas:
         "d d d"
         "a c c"
     ;
 }
 
-#waveform1,
-#waveform2 {
-    margin-left: 10px;
-    border: 1px;
-}
+
 
 .transportBtn {
     padding-top: 3px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
     border: none;
-}
-
-.audioPlrName {
-    margin-left: 10px;
-    margin-bottom: 5px;
 }
 
 .audioPlayer {
@@ -709,3 +729,4 @@ footer {
     padding-bottom: 50px;
 
 }
+
