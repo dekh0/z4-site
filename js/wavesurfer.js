@@ -1,5 +1,5 @@
 /*!
- * wavesurfer.js 6.1.0 (2022-03-31)
+ * wavesurfer.js 6.2.0 (2022-05-16)
  * https://wavesurfer-js.org
  * @license BSD-3-Clause
  */
@@ -12,7 +12,7 @@
 		exports["WaveSurfer"] = factory();
 	else
 		root["WaveSurfer"] = factory();
-})(self, function() {
+})(self, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -4146,7 +4146,7 @@ var WaveSurfer = /*#__PURE__*/function (_util$Observer) {
 
     var prevWidth = 0;
     _this._onResize = util.debounce(function () {
-      if (prevWidth != _this.drawer.wrapper.clientWidth && !_this.params.scrollParent) {
+      if (_this.drawer.wrapper && prevWidth != _this.drawer.wrapper.clientWidth && !_this.params.scrollParent) {
         prevWidth = _this.drawer.wrapper.clientWidth;
 
         if (prevWidth) {
@@ -5600,7 +5600,7 @@ var WaveSurfer = /*#__PURE__*/function (_util$Observer) {
 
 exports["default"] = WaveSurfer;
 
-_defineProperty(WaveSurfer, "VERSION", "6.1.0");
+_defineProperty(WaveSurfer, "VERSION", "6.2.0");
 
 _defineProperty(WaveSurfer, "util", util);
 

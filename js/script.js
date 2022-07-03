@@ -60,13 +60,13 @@ function onLoad() {
             wavesurfers.push(new WaveSurfer.create({
                 container: containerName,
                 waveColor: z4_color,
-                progressColor: 'rgb(81,75,140)',
+                progressColor: z4_color,
                 pixelRatio: 4,
                 responsive: true,
                 height: 70,
                 barWidth: 4,
                 cursorWidth: 4,
-                cursorColor: 'rgba(116,113,156,0.2)',
+                cursorColor: 'rgba(111,105,170,0.9)',
                 barRadius: 9,
             }));
             containerName = "#waveform_d" + String(i);
@@ -74,13 +74,13 @@ function onLoad() {
                 wavesurfers.push(new WaveSurfer.create({
                     container: containerName,
                     waveColor: z4_color,
-                    progressColor: 'rgba(111,105,170)',
+                    progressColor: z4_color,
                     pixelRatio: 4,
                     responsive: true,
                     height: 70,
                     barWidth: 4,
                     cursorWidth: 4,
-                    cursorColor: 'rgba(116,113,156,0.2)',
+                    cursorColor: 'rgba(111,105,170,0.9)',
                     barRadius: 9,
                 }));
                 wavesurfers[waveserferNumber + 1].load(data.dataset.wet);
@@ -130,11 +130,11 @@ function play(number) {
 
         wavesurfers.forEach((n, i) => {
             if (n !== null)
-                if (i != number) {
+                if ((i != number) && (i != (number + 1))) {
                     n.pause();
+                    n.seekTo(0);
                 }
         });
-
 
     } else {
         wavesurfers[number].pause();

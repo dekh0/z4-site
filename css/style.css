@@ -319,7 +319,7 @@ th {
     }
 
     .navbar a:hover {
-        ccolor: rgb(212, 47, 47);
+        color: rgb(212, 47, 47);
         -webkit-transition: -webkit-transform 0.1s ease-in-out;
         transition: all 0.1s ease-in-out;
     }
@@ -501,7 +501,7 @@ th {
     }
 
     .navbar a:hover {
-        ccolor: rgb(212, 47, 47);
+        color: rgb(212, 47, 47);
         -webkit-transition: -webkit-transform 0.1s ease-in-out;
         transition: all 0.1s ease-in-out;
     }
